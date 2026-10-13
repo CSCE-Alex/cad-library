@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/cad-library/static/css/main.33aca2f4.css",
+    "main.js": "/cad-library/static/js/main.b135d6d0.js",
+    "index.html": "/cad-library/index.html",
+    "main.33aca2f4.css.map": "/cad-library/static/css/main.33aca2f4.css.map",
+    "main.b135d6d0.js.map": "/cad-library/static/js/main.b135d6d0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.33aca2f4.css",
+    "static/js/main.b135d6d0.js"
+  ]
+}
