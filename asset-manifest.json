@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/cad-library/static/css/main.33aca2f4.css",
-    "main.js": "/cad-library/static/js/main.b135d6d0.js",
+    "main.css": "/cad-library/static/css/main.09628e8b.css",
+    "main.js": "/cad-library/static/js/main.1af7e65b.js",
+    "static/media/CADlogo.jpg": "/cad-library/static/media/CADlogo.1ce1454ed8b4dbe0dc79.jpg",
     "index.html": "/cad-library/index.html",
-    "main.33aca2f4.css.map": "/cad-library/static/css/main.33aca2f4.css.map",
-    "main.b135d6d0.js.map": "/cad-library/static/js/main.b135d6d0.js.map"
+    "main.09628e8b.css.map": "/cad-library/static/css/main.09628e8b.css.map",
+    "main.1af7e65b.js.map": "/cad-library/static/js/main.1af7e65b.js.map"
   },
   "entrypoints": [
-    "static/css/main.33aca2f4.css",
-    "static/js/main.b135d6d0.js"
+    "static/css/main.09628e8b.css",
+    "static/js/main.1af7e65b.js"
   ]
 }
