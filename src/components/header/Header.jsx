@@ -1,11 +1,19 @@
-import "./Header.css";
+import React from 'react';
+import Navigation from '../navigation/Navigation';
+import logo from './images/CADlogo.jpg';
+import './Header.css';
 
 const Header = () => {
-    return(
-        <header>
-            <h1>HI</h1>
-        </header>
-    );
+  return (
+    <header className="site-header">
+      <div className="header-container">
+        <div className="logo-area">
+          <img src={logo} alt="CAD Library Logo" className="header-logo" />
+        </div>
+        <Navigation />
+      </div>
+    </header>
+  );
 };
 
 export default Header;

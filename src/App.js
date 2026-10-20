@@ -1,9 +1,11 @@
 import React from 'react';
+import Header from './components/header/Header';
+import './index.css';
 
 function App() {
   return (
-    <div>
-      <h1>CAD Library</h1>
+    <div className="App">
+      <Header />
     </div>
   );
 }

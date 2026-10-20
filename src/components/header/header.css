@@ -1,0 +1,41 @@
+.site-header {
+  width: 100%;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-area h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.header-logo {
+  height: 40px; 
+  width: auto;
+  display: block;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
