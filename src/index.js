@@ -12,7 +12,10 @@ const App = () => {
   return ( 
     <HashRouter>
       <Routes>
-        
+        <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="listings" element={<Listings />} />
+        </Route>
       </Routes>
     </HashRouter>
   )
