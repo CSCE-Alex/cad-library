@@ -1,7 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
+import Layout from './Layout';
+import Home from "./pages/home/Home";
+import Listings from "./pages/listings/listing";
+
+
+const App = () => {
+  return ( 
+    <HashRouter>
+      <Routes>
+        
+      </Routes>
+    </HashRouter>
+  )
+
+};
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
