@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "homepage": "https://CSCE-Alex.github.io/cad-library",
   "name": "cad-library",
   "version": "0.1.0",
@@ -42,8 +41,6 @@
       "last 1 safari version"
     ]
   },
-=======
->>>>>>> 7ad8d0c761e6312afa1429d32ca2247ec18043a7
   "devDependencies": {
     "gh-pages": "^6.3.0"
   }
