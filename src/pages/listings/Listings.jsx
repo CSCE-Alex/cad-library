@@ -1,7 +1,6 @@
 import "./Listings.css";
 import Services from "../../components/services/Services";
 
-// Import each unique car image
 import benzPic from "../../components/services/images/Benz.png";
 import dbsPic from "../../components/services/images/DBS.png";
 import gt3rsPic from "../../components/services/images/gt3rsL.png";
@@ -15,32 +14,32 @@ const Listings = () => {
       <Services 
         title="Essential Detail" 
         description="Thorough exterior hand wash, wheel cleaning, tire shine, and glass polish." 
-        src={benzPic} 
+        src={dbsPic} 
       />
       <Services 
         title="Premium Detail" 
         description="Full exterior wash, clay bar paint decontamination, and interior vacuuming." 
-        src={r8Pic} 
+        src={m3Pic} 
       />
       <Services 
         title="Elite Detail & Correction" 
         description="Multi-stage paint correction, swirl removal, and high-gloss ceramic paint sealant." 
-        src={gt3rsPic} 
+        src={svjPic} 
       />
       <Services 
         title="Interior Detail" 
         description="Deep carpet shampoo extraction, leather cleaning, and dashboard conditioning." 
-        src={dbsPic} 
+        src={benzPic} 
       />
       <Services 
         title="Exterior Detail" 
         description="Foam cannon wash, paint decontamination, chrome polishing, and protective wax finish." 
-        src={m3Pic} 
+        src={r8Pic} 
       />
       <Services
         title="Full Detail" 
         description="Our comprehensive top-to-bottom package combining exterior correction and interior restoration." 
-        src={svjPic} 
+        src={gt3rsPic} 
       />
     </div>
   );
