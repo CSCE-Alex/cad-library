@@ -5,6 +5,7 @@ import './index.css';
 import Layout from "./Layout";
 import Home from "./pages/home/Home";
 import Listings from './pages/listings/Listings.jsx';
+import About from './pages/about/About.jsx';
 
 const App = () => { 
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="listings" element={<Listings />} />
+          <Route path="about" element={<About />} />
         </Route>
       </Routes>
     </HashRouter>
