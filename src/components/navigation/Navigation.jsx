@@ -1,16 +1,18 @@
+import { NavLink } from "react-router-dom";
 import "./Navigation.css";
-import {NavLink} from "react-router-dom";
-import {HashLink} from "react-router-hash-link";
-
 
 const Navigation = () => {
   return (
-    <nav className="main-navigation">
-      <ul>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><HashLink to="/#about">About</HashLink></li>
-        <li><NavLink to="/listings">Listings</NavLink></li>
-      </ul>
+    <nav className="main-nav">
+      <NavLink to="/" end className={({ isActive }) => (isActive ? "active" : "")}>
+        Home
+      </NavLink>
+      <NavLink to="about" className={({ isActive }) => (isActive ? "active" : "")}>
+        About
+      </NavLink>
+      <NavLink to="listings" className={({ isActive }) => (isActive ? "active" : "")}>
+        Listings
+      </NavLink>
     </nav>
   );
 };
