@@ -1,14 +1,14 @@
-.main-nav ul {
-  list-style: none;
+.main-navigation ul {
+  list-style: none; /* Removes the bullet points */
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: row; /* Horizontal menu layout */
+  flex-direction: row; /* Aligns the items horizontally */
   align-items: center;
   gap: 1.5rem;
 }
 
-.main-nav a {
+.main-navigation a {
   color: #cbd5e1;
   text-decoration: none;
   font-weight: 600;
@@ -18,12 +18,12 @@
   transition: all 0.2s ease-in-out;
 }
 
-.main-nav a:hover {
+.main-navigation a:hover {
   color: #38bdf8;
   background-color: rgba(56, 189, 248, 0.1);
 }
 
-.main-nav a.active {
+.main-navigation a.active {
   color: #ffffff;
   background-color: #2563eb;
 }
