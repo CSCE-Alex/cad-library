@@ -1,29 +1,26 @@
-.main-navigation ul {
-  list-style: none; /* Removes the bullet points */
-  padding: 0;
-  margin: 0;
+.main-nav {
   display: flex;
-  flex-direction: row; /* Aligns the items horizontally */
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
-.main-navigation a {
+.nav-link {
   color: #cbd5e1;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1rem;
-  padding: 0.5rem 0.75rem;
-  border-radius: 4px;
-  transition: all 0.2s ease-in-out;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
 }
 
-.main-navigation a:hover {
-  color: #38bdf8;
-  background-color: rgba(56, 189, 248, 0.1);
+.nav-link:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
-.main-navigation a.active {
+.nav-link.active {
   color: #ffffff;
   background-color: #2563eb;
+  font-weight: 600;
 }
