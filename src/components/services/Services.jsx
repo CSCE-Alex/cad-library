@@ -1,49 +1,15 @@
-import "./Listings.css";
-import Services from "../../components/services/Services";
+import "./Services.css";
 
-// Import each unique car image from your components/services/images folder
-import benzPic from "../../components/services/images/Benz.png";
-import dbsPic from "../../components/services/images/DBS.png";
-import gt3rsPic from "../../components/services/images/gt3rsL.png";
-import m3Pic from "../../components/services/images/M3.png";
-import r8Pic from "../../components/services/images/R8.png";
-import svjPic from "../../components/services/images/SVJ.png";
-
-const Listings = () => {
+const Services = ({ title, description, src }) => {
   return (
-    <div id="listings" className="page">
-      <Services 
-        title="Essential Detail" 
-        description="Thorough exterior hand wash, wheel cleaning, tire shine, and glass polish." 
-        src={benzPic} 
-      />
-      <Services 
-        title="Premium Detail" 
-        description="Full exterior wash, clay bar paint decontamination, and interior vacuuming." 
-        src={dbsPic} 
-      />
-      <Services 
-        title="Elite Detail & Correction" 
-        description="Multi-stage paint correction, swirl removal, and high-gloss ceramic paint sealant." 
-        src={gt3rsPic} 
-      />
-      <Services 
-        title="Interior Detail" 
-        description="Deep carpet shampoo extraction, leather cleaning, and dashboard conditioning." 
-        src={m3Pic} 
-      />
-      <Services 
-        title="Exterior Detail" 
-        description="Foam cannon wash, paint decontamination, chrome polishing, and protective wax finish." 
-        src={r8Pic} 
-      />
-      <Services
-        title="Full Detail" 
-        description="Our comprehensive top-to-bottom package combining exterior correction and interior restoration." 
-        src={svjPic} 
-      />
+    <div className="service-card">
+      <img src={src} alt={title} />
+      <div className="service-info">
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </div>
     </div>
   );
 };
 
-export default Listings;
+export default Services;
