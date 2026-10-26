@@ -20,7 +20,7 @@ const Home = () => {
             </Link>
           </div>
         </div>
-      active</section>
+      </section>
 
       {/* Feature Highlights */}
       <section className="features-section">
