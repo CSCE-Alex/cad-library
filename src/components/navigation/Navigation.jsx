@@ -23,6 +23,12 @@ const Navigation = () => {
       >
         Listings
       </NavLink>
+      <NavLink 
+        to="/contact" 
+        className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
+      >
+        Contact
+      </NavLink>
     </nav>
   );
 };
