@@ -1,9 +1,6 @@
 import "./About.css";
 
 const About = () => {
-  class About {
-  }
-
   return (
     <div id="about" className="page about-page">
       <div className="about-hero">
@@ -24,9 +21,9 @@ const About = () => {
         <div className="about-section">
           <h3>Our Standards</h3>
           <ul className="standards-list">
-            <li><strong>Pro-Grade Products:</strong> We only utilize industry-leading ceramic sealants, pH-neutral soaps, and professional-grade correction compounds.</li>
-            <li><strong>Meticulous Attention to Detail:</strong> Every inch of your vehicle—from paint depth to tight interior crevices—is inspected and perfected.</li>
-            <li><strong>Customer Satisfaction:</strong> We take pride in delivering showroom-quality results and long-lasting protection for your investment.</li>
+            <li><strong>Pro-Grade Products:</strong> Industry-leading ceramic sealants, pH-neutral soaps, and professional-grade correction compounds.</li>
+            <li><strong>Meticulous Attention:</strong> Every inch of your vehicle—from paint depth to tight interior crevices—is inspected and perfected.</li>
+            <li><strong>Customer Satisfaction:</strong> Room for showroom-quality results and long-lasting protection for your investment.</li>
           </ul>
         </div>
       </div>
