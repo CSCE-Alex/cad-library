@@ -1,9 +1,21 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 import "./Navigation.css";
 
 const Navigation = () => {
+  const [menuOpen,setMenuOpen] = useState(false);
+
+  const toggleNav =() => {
+    setMenuOpen(!menuOpen);
+  }
+
+
+  
   return (
     <nav className="main-nav">
+      <a id= "toggle-nav" onClick={toggleNav} href="#">
+        {menuOpen?(<p>&#8963;</p>):(<p>&#8964;</p>)}
+      </a>
       <NavLink 
         to="/" 
         end 
