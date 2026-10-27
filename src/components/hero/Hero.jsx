@@ -1,24 +1,19 @@
-import "./Header.css";
-import logo from "./images/logo192.png"; 
-import Navigation from "../navigation/Navigation";
-import { NavLink } from "react-router-dom";
+import "./Hero.css";
+import CADlogo from "./images/CADlogo.jpg";
 
-const Header = () => {
-  return (
-    <header className="main-header">
-      <div className="brand-section">
-        <NavLink to="/">
-          <img id="logo" src={logo} alt="CAD logo" />
-        </NavLink>
-        <h1>
-          <NavLink to="/" className="brand-title">
-            Carolina Auto Details
-          </NavLink>
-        </h1>
-      </div>
-      <Navigation />
-    </header>
-  );
+const Hero = () => {
+
+    const images = importAll(
+        require.context("../images/slideshow", false, /\.(png|jpe?g|svg$|webp)/)
+    );
+    
+    return (
+        <section id="hero">
+            <img src={CADlogo} alt="CAD Logo" />
+            <a id="next-arrow" className="arrow">&rsaquo;</a>
+            <a id="prev-arrow" className="arrow">&lsaquo;</a>
+        </section>
+    )
 };
 
-export default Header;
+export default Hero;
