@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Slideshow from "../../components/slideshow/Slideshow";
-import "./home.css";
+import "./Home.css";
 
 const Home = () => {
   return (
@@ -26,7 +26,7 @@ const Home = () => {
 
       {/* Featured Vehicle Slideshow */}
       <section className="slideshow-section">
-        <h2>Featured Exotics & Classics</h2>
+        <h2>Featured Vehicles</h2>
         <Slideshow />
       </section>
 

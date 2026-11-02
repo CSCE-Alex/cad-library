@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import ShopMap from "../../components/iframe/ShopMap";
 import "./Contact.css";
 
 const Contact = () => {
@@ -20,10 +22,20 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
+    toast.success(`Booking request received for ${formData.name}!`, {
+      duration: 4000,
+      position: "top-center",
+      style: {
+        background: "#1e242d",
+        color: "#ffffff",
+        border: "1px solid #2563eb",
+      },
+    });
   };
 
   return (
     <div id="contact" className="page contact-page">
+      <Toaster />
       <div className="contact-header">
         <h2>Book an Appointment</h2>
         <p>Get in touch or request a detailing package for your vehicle.</p>
@@ -33,7 +45,9 @@ const Contact = () => {
         {submitted ? (
           <div className="success-message">
             <h3>Thank You, {formData.name}!</h3>
-            <p>Your request for the <strong>{formData.service}</strong> package has been received. We'll contact you shortly at {formData.email}.</p>
+            <p>
+              Your request for the <strong>{formData.service}</strong> package has been received. We'll contact you shortly at {formData.email}.
+            </p>
             <button className="btn btn-primary" onClick={() => setSubmitted(false)}>
               Send Another Request
             </button>
@@ -115,6 +129,9 @@ const Contact = () => {
           </form>
         )}
       </div>
+
+      {/* Embedded Location IFrame Section */}
+      <ShopMap />
     </div>
   );
 };
