@@ -42,6 +42,17 @@
   flex-wrap: wrap;
 }
 
+/* Slideshow Section Styling */
+.slideshow-section {
+  text-align: center;
+}
+
+.slideshow-section h2 {
+  font-size: 1.85rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
 /* Buttons */
 .btn {
   display: inline-block;

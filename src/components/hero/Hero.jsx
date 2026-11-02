@@ -1,7 +1,13 @@
 import "./Hero.css";
 import CADlogo from "./images/CADlogo.jpg";
+import {useState} from "react";
 
 const Hero = () => {
+    const [slideIndex, setSlideIndex] = useState(0);
+
+    const importAll = (resource) => {
+      return resource.keys().map(resource);
+    }
 
     const images = importAll(
         require.context("../images/slideshow", false, /\.(png|jpe?g|svg$|webp)/)

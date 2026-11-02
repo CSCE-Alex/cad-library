@@ -1,5 +1,7 @@
+import React from "react";
 import { Link } from "react-router-dom";
-import "./Home.css";
+import Slideshow from "../../components/slideshow/Slideshow";
+import "./home.css";
 
 const Home = () => {
   return (
@@ -20,6 +22,12 @@ const Home = () => {
             </Link>
           </div>
         </div>
+      </section>
+
+      {/* Featured Vehicle Slideshow */}
+      <section className="slideshow-section">
+        <h2>Featured Exotics & Classics</h2>
+        <Slideshow />
       </section>
 
       {/* Feature Highlights */}
