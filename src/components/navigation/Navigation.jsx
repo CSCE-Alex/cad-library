@@ -33,7 +33,7 @@ const Navigation = () => {
         to="/listings" 
         className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
       >
-        Listings
+        Services
       </NavLink>
       <NavLink 
         to="/contact" 
