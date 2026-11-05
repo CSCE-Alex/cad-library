@@ -4,7 +4,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import Layout from "./Layout";
 import Home from "./pages/home/Home";
-import Listings from './pages/listings/Listings.jsx';
+import Services from './pages/services/Services.jsx';
 import About from './components/about/About.jsx';
 import Contact from './pages/contact/Contact.jsx';
 
