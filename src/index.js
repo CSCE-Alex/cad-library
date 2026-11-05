@@ -4,7 +4,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import Layout from "./Layout";
 import Home from "./pages/home/Home";
-import Services from './pages/services/Services.jsx';
+import Services from './components/services/Services.jsx';
 import About from './components/about/About.jsx';
 import Contact from './pages/contact/Contact.jsx';
 
@@ -14,7 +14,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="listings" element={<Listings />} />
+          <Route path="services" element={<Services />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
         </Route>
