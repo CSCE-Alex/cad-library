@@ -75,10 +75,7 @@ const Services = () => {
         ))}
       </div>
 
-      <Tooltip 
-        id="service-tip" 
-        style={{ backgroundColor: "#2563eb", color: "#ffffff", borderRadius: "6px", fontWeight: "600" }} 
-      />
+      <Tooltip id="service-tip" />
     </div>
   );
 };

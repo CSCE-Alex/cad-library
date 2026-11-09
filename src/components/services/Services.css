@@ -43,3 +43,10 @@
   line-height: 1.4;
   margin: 0 1rem 1.25rem 1rem;
 }
+
+.react-tooltip#service-tip {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+}
