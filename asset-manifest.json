@@ -1,14 +1,20 @@
 {
   "files": {
-    "main.css": "/cad-library/static/css/main.09628e8b.css",
-    "main.js": "/cad-library/static/js/main.1af7e65b.js",
-    "static/media/CADlogo.jpg": "/cad-library/static/media/CADlogo.1ce1454ed8b4dbe0dc79.jpg",
+    "main.css": "/cad-library/static/css/main.b6709a01.css",
+    "main.js": "/cad-library/static/js/main.6d6ea033.js",
+    "static/media/R8.png": "/cad-library/static/media/R8.eba4f085b990c868a474.png",
+    "static/media/SVJ.png": "/cad-library/static/media/SVJ.53f6f292f362fffd68f7.png",
+    "static/media/DBS.png": "/cad-library/static/media/DBS.e0c3f5826d83f5f551bf.png",
+    "static/media/M3.png": "/cad-library/static/media/M3.db6e64a0104dc73b66e2.png",
+    "static/media/Benz.png": "/cad-library/static/media/Benz.2e937b39f5858fd2d53f.png",
+    "static/media/gt3rsL.png": "/cad-library/static/media/gt3rsL.d4a30b8afae39f0ecd95.png",
+    "static/media/logo192.png": "/cad-library/static/media/logo192.d2307bc4361216c3ad14.png",
     "index.html": "/cad-library/index.html",
-    "main.09628e8b.css.map": "/cad-library/static/css/main.09628e8b.css.map",
-    "main.1af7e65b.js.map": "/cad-library/static/js/main.1af7e65b.js.map"
+    "main.b6709a01.css.map": "/cad-library/static/css/main.b6709a01.css.map",
+    "main.6d6ea033.js.map": "/cad-library/static/js/main.6d6ea033.js.map"
   },
   "entrypoints": [
-    "static/css/main.09628e8b.css",
-    "static/js/main.1af7e65b.js"
+    "static/css/main.b6709a01.css",
+    "static/js/main.6d6ea033.js"
   ]
 }
