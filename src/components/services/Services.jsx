@@ -3,6 +3,9 @@ import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import "./Services.css";
 
+// Assuming HouseDialog is imported or defined in your project
+import ServicesDialog from "./ServicesDialog";
+
 import benzPic from "./images/Benz.png";
 import dbsPic from "./images/DBS.png";
 import gt3rsPic from "./images/gt3rsL.png";
@@ -56,6 +59,16 @@ const serviceData = [
 ];
 
 const Services = () => {
+  const [showDialog, setShowDialog] = useState(false);
+
+  const showDetails = () => {
+    setShowDialog(true);
+  };
+
+  const hideDetails = () => {
+    setShowDialog(false);
+  };
+
   return (
     <div id="services" className="page services-page">
       <div className="services-grid">
@@ -66,11 +79,12 @@ const Services = () => {
             data-tooltip-id="service-tip"
             data-tooltip-content={service.tooltip}
           >
-            <div className="service-card">
+            <section className="house">
               <img src={service.src} alt={service.title} className="service-img" />
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-            </div>
+              <ServicesDialog />
+            </section>
           </div>
         ))}
       </div>

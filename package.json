@@ -1,7 +1,7 @@
 {
   "homepage": "https://CSCE-Alex.github.io/cad-library",
   "name": "cad-library",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": false,
   "dependencies": {
     "@testing-library/dom": "^10.4.2",
