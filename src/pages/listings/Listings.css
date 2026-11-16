@@ -1,22 +1,82 @@
-#listings > *{
-    margin-bottom:20px;
+.page {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Medium Screens */
-@media only screen and (min-width: 500px) {
-    #listings {
-        margin-bottom:0;
-        display:grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px;
-        grid-auto-rows: 1fr;
-        align-items: start;
-    }
+.listings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
-/* Larger Screens */
-@media only screen and (min-width: 768px) {
-    #listings {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
+.listings-header h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 0;
+}
+
+#btn-add-service {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.75rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+#btn-add-service:hover {
+    background-color: #1d4ed8;
+    transform: scale(1.05);
+}
+
+#services-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: #1e242d;
+    border: 1px solid #2d3748;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.service-card h3 {
+    color: #ffffff;
+    font-size: 1.25rem;
+    margin: 1rem 1rem 0.5rem 1rem;
+}
+
+.service-card p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0 1rem 1.25rem 1rem;
+}

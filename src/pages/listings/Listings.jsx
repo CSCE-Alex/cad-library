@@ -1,36 +1,38 @@
 import "./Listings.css";
 import { useState, useEffect } from "react";
-import axios from "axios";
-import { API_BASE_URL } from "../../config";
 import AddServices from "../../components/add_services/AddServices";
-import ServiceCard from "../../components/services/Services";
+import ServicesDialog from "../../components/services_dialog/ServicesDialog";
+
+const API_URL = "https://cadproject-backend-1.onrender.com";
 
 const Listings = () => {
     const [services, setServices] = useState([]);
     const [pending, setPending] = useState(true);
     const [showAddDialog, setShowAddDialog] = useState(false);
+    const [selectedService, setSelectedService] = useState(null);
 
-    const openAddDialog = () => {
-        setShowAddDialog(true);
-    };
-
-    const closeAddDialog = () => {
-        setShowAddDialog(false);
-    };
+    const openAddDialog = () => setShowAddDialog(true);
+    const closeAddDialog = () => setShowAddDialog(false);
 
     const addServiceToList = (newService) => {
-        setServices((services) => [...services, newService]);
+        setServices((prev) => [...prev, newService]);
     };
 
-    // After the page has loaded
     useEffect(() => {
         const loadServices = async () => {
             try {
-                const response = await axios.get(`${API_BASE_URL}/api/services`);
-                setPending(false);
-                setServices(response.data);
+                const response = await fetch(`${API_URL}/api/services`);
+                const data = await response.json();
+                
+                if (Array.isArray(data)) {
+                    setServices(data);
+                } else {
+                    setServices([]);
+                }
             } catch (error) {
                 console.error("Error loading services:", error);
+                setServices([]);
+            } finally {
                 setPending(false);
             }
         };
@@ -40,8 +42,11 @@ const Listings = () => {
 
     return (
         <div id="listings" className="page">
-            <h2>Listings</h2>
-            <button id="btn-add-house" onClick={openAddDialog}>+</button>
+            <div className="listings-header">
+                <h2>Services Listings</h2>
+                <button id="btn-add-service" onClick={openAddDialog}>+</button>
+            </div>
+            
             {showAddDialog && (
                 <AddServices 
                     close_dialog={closeAddDialog}
@@ -49,19 +54,36 @@ const Listings = () => {
                 />
             )}
             
-            <div id="services">
-                {pending && <p>Loading services...</p>}
-                {services.map((service) => (
-                    <ServiceCard 
-                        key={service._id || service.id}
-                        title={service.title}
-                        description={service.description}
-                        estimated_time={service.estimated_time}
-                        category={service.category}
-                        src={`${API_BASE_URL}/images/${service.img}`} 
-                    />
+            <div id="services-grid-container">
+                {pending && <p style={{ color: "#fff", textAlign: "center" }}>Waking up server and loading services...</p>}
+                {!pending && services.length === 0 && <p style={{ color: "#fff", textAlign: "center" }}>No services found.</p>}
+                
+                {Array.isArray(services) && services.map((service) => (
+                    <section 
+                        key={service._id || service.id} 
+                        className="service-card"
+                        onClick={() => setSelectedService(service)}
+                    >
+                        <img 
+                            src={`${API_URL}/images/${service.img}`} 
+                            alt={service.title} 
+                        />
+                        <h3>{service.title}</h3>
+                        <p>{service.description}</p>
+                    </section>
                 ))}
             </div>
+
+            {selectedService && (
+                <ServicesDialog 
+                    title={selectedService.title}
+                    description={selectedService.description}
+                    estimated_time={selectedService.estimated_time}
+                    category={selectedService.category}
+                    img={selectedService.img}
+                    close_dialog={() => setSelectedService(null)} 
+                />
+            )}
         </div>
     );
 };

@@ -1,97 +1,88 @@
-import React, { useState } from "react";
-import { Tooltip } from "react-tooltip";
-import "react-tooltip/dist/react-tooltip.css";
-import "./Services.css";
+import "./Listings.css";
+import { useState, useEffect } from "react";
+import AddServices from "../../components/add_services/AddServices";
+import ServicesDialog from "../../components/services_dialog/ServicesDialog";
 
-// Correct relative path to your services_dialog folder
-import ServicesDialog from "../services_dialog/ServicesDialog";
+const API_URL = "https://cadproject-backend-1.onrender.com";
 
-import benzPic from "./images/Benz.png";
-import dbsPic from "./images/DBS.png";
-import gt3rsPic from "./images/gt3rsL.png";
-import m3Pic from "./images/M3.png";
-import r8Pic from "./images/R8.png";
-import svjPic from "./images/SVJ.png";
+const Listings = () => {
+    const [services, setServices] = useState([]);
+    const [pending, setPending] = useState(true);
+    const [showAddDialog, setShowAddDialog] = useState(false);
+    const [selectedService, setSelectedService] = useState(null);
 
-const serviceData = [
-  {
-    id: 1,
-    title: "Essential Detail",
-    description: "Thorough exterior hand wash, wheel cleaning, tire shine, and glass polish.",
-    src: dbsPic,
-    tooltip: "Estimated Time: 2-3 Hours | Essential Maintenance"
-  },
-  {
-    id: 2,
-    title: "Premium Detail",
-    description: "Full exterior wash, clay bar paint decontamination, and interior vacuuming.",
-    src: m3Pic,
-    tooltip: "Estimated Time: 4-5 Hours | Most Popular"
-  },
-  {
-    id: 3,
-    title: "Elite Detail & Correction",
-    description: "Multi-stage paint correction, swirl removal, and high-gloss ceramic paint sealant.",
-    src: svjPic,
-    tooltip: "Estimated Time: Full Day | Includes Ceramic Warranty"
-  },
-  {
-    id: 4,
-    title: "Interior Detail",
-    description: "Deep carpet shampoo extraction, leather cleaning, and dashboard conditioning.",
-    src: benzPic,
-    tooltip: "Estimated Time: 3-4 Hours | Deep Stain Removal"
-  },
-  {
-    id: 5,
-    title: "Exterior Detail",
-    description: "Foam cannon wash, paint decontamination, chrome polishing, and protective wax finish.",
-    src: r8Pic,
-    tooltip: "Estimated Time: 3 Hours | High Gloss Finish"
-  },
-  {
-    id: 6,
-    title: "Full Detail",
-    description: "Our comprehensive top-to-bottom package combining exterior correction and interior restoration.",
-    src: gt3rsPic,
-    tooltip: "Estimated Time: Full Day | Complete Showroom Transformation"
-  }
-];
+    const openAddDialog = () => setShowAddDialog(true);
+    const closeAddDialog = () => setShowAddDialog(false);
 
-const Services = () => {
-  const [showDialog, setShowDialog] = useState(false);
+    const addServiceToList = (newService) => {
+        setServices((prev) => [...prev, newService]);
+    };
 
-  const showDetails = () => {
-    setShowDialog(true);
-  };
+    useEffect(() => {
+        const loadServices = async () => {
+            try {
+                const response = await fetch(`${API_URL}/api/services`);
+                const data = await response.json();
+                
+                if (Array.isArray(data)) {
+                    setServices(data);
+                } else {
+                    setServices([]);
+                }
+            } catch (error) {
+                console.error("Error loading services:", error);
+                setServices([]);
+            } finally {
+                setPending(false);
+            }
+        };
 
-  const hideDetails = () => {
-    setShowDialog(false);
-  };
+        loadServices();
+    }, []);
 
-  return (
-    <div id="services" className="page services-page">
-      <div className="services-grid">
-        {serviceData.map((service) => (
-          <div 
-            key={service.id} 
-            className="service-card-wrapper"
-            data-tooltip-id="service-tip"
-            data-tooltip-content={service.tooltip}
-          >
-            <section className="house">
-              <img src={service.src} alt={service.title} className="service-img" />
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-              <ServicesDialog close_dialog={hideDetails} />
-            </section>
-          </div>
-        ))}
-      </div>
+    return (
+        <div id="listings" className="page">
+            <div className="listings-header">
+                <h2>Services Listings</h2>
+                <button id="btn-add-service" onClick={openAddDialog}>+</button>
+            </div>
+            
+            {showAddDialog && (
+                <AddServices 
+                    close_dialog={closeAddDialog}
+                    add_service_to_list={addServiceToList}
+                />
+            )}
+            
+            <div id="services-grid-container">
+                {pending && <p style={{ color: "#fff", textAlign: "center" }}>Waking up server and loading services (this may take up to 30 seconds)...</p>}
+                {!pending && services.length === 0 && <p style={{ color: "#fff", textAlign: "center" }}>No services found or server is offline.</p>}
+                
+                {Array.isArray(services) && services.map((service) => (
+                    <section 
+                        key={service._id || service.id} 
+                        className="service-card"
+                        onClick={() => setSelectedService(service)}
+                        style={{ cursor: "pointer" }}
+                    >
+                        <img 
+                            src={`${API_URL}/images/${service.img}`} 
+                            alt={service.title} 
+                        />
+                        <h3>{service.title}</h3>
+                        <p>{service.description}</p>
+                    </section>
+                ))}
+            </div>
 
-      <Tooltip id="service-tip" />
-    </div>
-  );
+            {selectedService && (
+                <ServicesDialog 
+                    {...selectedService} 
+                    close_dialog={() => setSelectedService(null)} 
+                />
+            )}
+        </div>
+    );
 };
 
-export default Services;
+export default Listings;
