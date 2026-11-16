@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import "./Services.css";
 
-// Assuming HouseDialog is imported or defined in your project
-import ServicesDialog from "./ServicesDialog";
+// Correct relative path to your services_dialog folder
+import ServicesDialog from "../services_dialog/ServicesDialog";
 
 import benzPic from "./images/Benz.png";
 import dbsPic from "./images/DBS.png";
@@ -83,7 +83,7 @@ const Services = () => {
               <img src={service.src} alt={service.title} className="service-img" />
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-              <ServicesDialog />
+              <ServicesDialog close_dialog={hideDetails} />
             </section>
           </div>
         ))}
